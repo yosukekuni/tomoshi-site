@@ -217,7 +217,56 @@ footer p{margin:.3rem 0}
     "addressLocality": "名古屋市",
     "addressRegion": "愛知県",
     "addressCountry": "JP"
+  },
+  "knowsAbout": ["事業承継", "業務自動化", "中小企業支援", "属人化解消", "後継者不在対策"]
+}
+</script>
+
+<!-- Structured Data: HowTo (AEO対策) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "社長がいなくても回る会社にする方法",
+  "description": "属人的な業務を仕組みに移し替え、社長依存度を下げるための3ステップ。",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "業務を可視化する",
+      "text": "全ての業務フローを洗い出し、社長にしかできないことと仕組みに移せることを仕分けます。"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "仕組みに移す",
+      "text": "顧客管理、見積、請求、レポート、メール対応を自動化し、社長がいなくても回る状態を作ります。"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "渡せる状態にする",
+      "text": "マニュアル・システム一式を整備し、後継者や新オーナーが安心して引き継げる状態を証明します。"
+    }
+  ],
+  "totalTime": "P3M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "JPY",
+    "value": "0",
+    "description": "初回業務診断レポートは無料"
   }
+}
+</script>
+
+<!-- Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "TOMOSHI", "item": "https://tomoshi.jp/"}
+  ]
 }
 </script>
 </head>
@@ -227,7 +276,7 @@ footer p{margin:.3rem 0}
 <header style="background:#1a2a3a;padding:16px 0">
 <div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
 <a href="/" style="color:#e8a838;font-size:1.2rem;font-weight:700;text-decoration:none;letter-spacing:2px">TOMOSHI</a>
-<nav style="display:flex;gap:1.5rem"><a href="/blog/" style="color:#ccc;text-decoration:none;font-size:.9rem">ブログ</a><a href="#contact" style="color:#ccc;text-decoration:none;font-size:.9rem">お問い合わせ</a></nav>
+<nav style="display:flex;gap:1.5rem"><a href="/about/" style="color:#ccc;text-decoration:none;font-size:.9rem">TOMOSHIとは</a><a href="/blog/" style="color:#ccc;text-decoration:none;font-size:.9rem">ブログ</a><a href="#contact" style="color:#ccc;text-decoration:none;font-size:.9rem">お問い合わせ</a></nav>
 </div>
 </header>
 
@@ -442,6 +491,7 @@ footer p{margin:.3rem 0}
 <!-- FOOTER -->
 <footer>
   <p>TOMOSHI｜事業の灯を、消さない。</p>
+  <p style="margin:.5rem 0"><a href="/about/" style="color:#999;text-decoration:none">TOMOSHIとは</a>｜<a href="/blog/" style="color:#999;text-decoration:none">ブログ</a>｜<a href="/privacy/" style="color:#999;text-decoration:none">プライバシーポリシー</a></p>
   <p>&copy; 2026 東海エアサービス株式会社</p>
 </footer>
 
