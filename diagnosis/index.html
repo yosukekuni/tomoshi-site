@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YYJ7NQZ71J"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-YYJ7NQZ71J");</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>属人化リスク診断（無料・3分）｜TOMOSHI - 事業承継×業務自動化</title>
+<meta name="description" content="あなたの会社の「社長依存度」を無料で診断。10問のチェックリストで属人化リスクを可視化し、事業承継の準備度がわかります。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tomoshi.jp/diagnosis/">
+<meta property="og:title" content="属人化リスク診断（無料・3分）｜TOMOSHI">
+<meta property="og:description" content="あなたの会社の「社長依存度」を無料で診断。10問のチェックリストで属人化リスクを可視化。">
+<meta property="og:url" content="https://tomoshi.jp/diagnosis/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+.diag-hero{background:var(--navy);color:#fff;padding:60px 24px 50px;text-align:center}
+.diag-hero h1{font-size:1.8rem;color:#fff;margin-bottom:1rem;line-height:1.5}
+.diag-hero-sub{color:#ccc;font-size:1rem;line-height:2;max-width:560px;margin:0 auto}
+.diag-hero-badge{display:inline-block;background:var(--amber);color:var(--navy);font-weight:700;font-size:.85rem;padding:4px 16px;border-radius:20px;margin-bottom:1.2rem}
+
+.diag-section{padding:3rem 0 4rem}
+.diag-progress{max-width:640px;margin:0 auto 2rem;padding:0 24px}
+.diag-progress-bar{background:#e8e0d8;border-radius:20px;height:8px;overflow:hidden}
+.diag-progress-fill{background:var(--amber);height:100%;border-radius:20px;transition:width .3s ease}
+.diag-progress-text{font-size:.85rem;color:var(--muted);margin-top:.5rem;text-align:right}
+
+.diag-card{max-width:640px;margin:0 auto;padding:0 24px}
+.diag-question{background:#fff;border:1px solid #e8e0d8;border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;display:none}
+.diag-question.active{display:block}
+.diag-question-num{font-size:.85rem;color:var(--amber);font-weight:700;margin-bottom:.5rem}
+.diag-question h3{font-size:1.1rem;color:var(--navy);margin-bottom:1.2rem;line-height:1.6}
+.diag-options{display:flex;flex-direction:column;gap:.8rem}
+.diag-option{display:block;padding:14px 20px;border:2px solid #e8e0d8;border-radius:10px;cursor:pointer;font-size:.95rem;transition:all .2s;text-align:left;background:#fff;font-family:'Noto Sans JP',sans-serif;color:var(--text);line-height:1.6}
+.diag-option:hover{border-color:var(--amber);background:var(--warm)}
+.diag-option.selected{border-color:var(--amber);background:var(--warm);font-weight:600}
+.diag-nav{display:flex;justify-content:space-between;margin-top:1.5rem;max-width:640px;margin-left:auto;margin-right:auto;padding:0 24px}
+.diag-nav .btn{padding:12px 32px;font-size:.95rem;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif}
+.btn-secondary{background:#e8e0d8;color:var(--navy);border-radius:8px;font-weight:700}
+
+/* RESULT */
+.diag-result{display:none;max-width:640px;margin:0 auto;padding:0 24px}
+.diag-result-card{background:#fff;border:1px solid #e8e0d8;border-radius:var(--radius);padding:2.5rem;text-align:center}
+.diag-score{font-size:4rem;font-weight:900;line-height:1}
+.diag-score-label{font-size:1rem;color:var(--muted);margin:.5rem 0 1.5rem}
+.diag-gauge{width:100%;height:16px;background:#e8e0d8;border-radius:20px;overflow:hidden;margin-bottom:2rem}
+.diag-gauge-fill{height:100%;border-radius:20px;transition:width .8s ease}
+.diag-level{font-size:1.3rem;font-weight:700;margin-bottom:1rem}
+.diag-advice{text-align:left;font-size:.95rem;line-height:2;color:var(--text);margin-bottom:2rem}
+.diag-advice li{margin-bottom:.5rem}
+
+/* LEAD FORM */
+.diag-lead{background:linear-gradient(135deg,var(--navy) 0%,#2d4a6c 100%);border-radius:var(--radius);padding:2.5rem;color:#fff;margin-top:2rem;text-align:center}
+.diag-lead h3{color:#fff;font-size:1.2rem;margin-bottom:.5rem}
+.diag-lead p{color:#ccc;font-size:.9rem;margin-bottom:1.5rem;line-height:1.8}
+.diag-lead-form{display:flex;flex-direction:column;gap:.8rem;max-width:400px;margin:0 auto}
+.diag-lead-form input{padding:12px 16px;border:1px solid rgba(255,255,255,.3);border-radius:8px;font-size:1rem;font-family:'Noto Sans JP',sans-serif;background:rgba(255,255,255,.1);color:#fff}
+.diag-lead-form input::placeholder{color:rgba(255,255,255,.5)}
+.diag-lead-form input:focus{outline:none;border-color:var(--amber)}
+.diag-lead-form .btn{padding:14px;font-size:1rem;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif}
+.diag-lead-success{display:none;color:var(--amber);font-weight:700;font-size:1.1rem;margin-top:1rem}
+.diag-lead-error{display:none;color:#ff6b6b;font-size:.9rem;margin-top:.5rem}
+
+.diag-next-actions{margin-top:2rem;text-align:center}
+.diag-next-actions p{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+.diag-next-actions .btn{margin:.3rem;display:inline-block;text-decoration:none}
+
+.diag-retry{margin-top:1.5rem}
+.diag-retry a{color:var(--muted);font-size:.9rem;text-decoration:underline;cursor:pointer}
+
+@media(max-width:640px){
+  .diag-hero h1{font-size:1.4rem}
+  .diag-result-card{padding:1.5rem}
+  .diag-score{font-size:3rem}
+  .diag-lead{padding:1.5rem}
+}
+</style>
+
+<!-- Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "TOMOSHI", "item": "https://tomoshi.jp/"},
+    {"@type": "ListItem", "position": 2, "name": "属人化リスク診断", "item": "https://tomoshi.jp/diagnosis/"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+<div class="container">
+<a href="/" class="logo">TOMOSHI</a>
+<nav><a href="/about/">TOMOSHIとは</a><a href="/blog/">ブログ</a><a href="/contact/">お問い合わせ</a></nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="diag-hero">
+  <div class="container">
+    <span class="diag-hero-badge">無料・3分で完了</span>
+    <h1>あなたの会社の<br>「社長依存度」を診断します</h1>
+    <p class="diag-hero-sub">10問に答えるだけで、事業の属人化リスクと<br>承継準備の優先度がわかります。</p>
+  </div>
+</section>
+
+<!-- DIAGNOSIS -->
+<section class="diag-section">
+  <!-- Progress -->
+  <div class="diag-progress">
+    <div class="diag-progress-bar"><div class="diag-progress-fill" id="progressFill" style="width:10%"></div></div>
+    <p class="diag-progress-text" id="progressText">1 / 10</p>
+  </div>
+
+  <!-- Questions -->
+  <div class="diag-card" id="questionsContainer">
+
+    <div class="diag-question active" data-q="0">
+      <p class="diag-question-num">Q1. 顧客管理</p>
+      <h3>お客様の連絡先や取引履歴は、どこに管理されていますか？</h3>
+      <div class="diag-options">
+        <button class="diag-option" data-score="3">社長の頭の中・携帯電話のみ</button>
+        <button class="diag-option" data-score="2">社長の手帳やExcelに個人管理</button>
+        <button class="diag-option" data-score="1">共有ファイルやシステムがあるが、更新は社長のみ</button>
+        <button class="diag-option" data-score="0">社員が誰でもアクセス・更新できる仕組みがある</button>
+      </div>
+    </div>
+
+    <div class="diag-question" data-q="1">
+      <p class="diag-question-num">Q2. 見積・価格設定</p>
+      <h3>見積書の作成や価格の決定は、誰が行っていますか？</h3>
+      <div class="diag-options">
+        <button class="diag-option" data-score="3">社長しか作れない（経験と勘で決めている）</button>
+        <button class="diag-option" data-score="2">社長が最終確認しないと出せない</button>
+        <button class="diag-option" data-score="1">基準表はあるが、例外は社長判断</button>
+        <button class="diag-option" data-score="0">基準が明確で、社員が自律的に作成できる</button>
+      </div>
+    </div>
+
+    <div class="diag-question" data-q="2">
+      <p class="diag-question-num">Q3. 営業・受注</p>
+      <h3>新規の受注や営業活動は、主に誰が行っていますか？</h3>
+      <div class="diag-options">
+        <button class="diag-option" data-score="3">売上の80%以上が社長の人脈に依存している</button>
+        <button class="diag-option" data-score="2">社長の人脈が主だが、一部紹介や問い合わせもある</button>
+        <button class="diag-option" data-score="1">営業担当がいるが、大口は社長が対応</button>
+        <button class="diag-option" data-score="0">営業の仕組み（Web・紹介制度等）があり、社長不在でも受注できる</button>
+      </div>
+    </div>
+
+    <div class="diag-question" data-q="3">
+      <p class="diag-question-num">Q4. 経理・請求</p>
+      <h3>請求書の発行や入金管理は、どのように行われていますか？</h3>
+      <div class="diag-options">
+        <button class="diag-option" data-score="3">社長（または家族）が全て手作業で管理</button>
+        <button class="diag-option" data-score="2">Excelで管理しているが、操作できる人が限られている</button>
+        <button class="diag-option" data-score="1">会計ソフトはあるが、運用が属人的</button>
+        <button class="diag-option" data-score="0">クラウド会計で複数人が運用できる体制がある</button>
+      </div>
+    </div>
+
+    <div class="diag-question" data-q="4">
+      <p class="diag-question-num">Q5. 業務マニュアル</p>
+      <h3>日常業務の手順書やマニュアルはありますか？</h3>
+      <div class="diag-options">
+        <button class="diag-option" data-score="3">ない。全て口頭で教えている</button>
+        <button class="diag-option" data-score="2">一部あるが、古くて実態と合っていない</button>
+        <button class="diag-option" data-score="1">主要業務にはあるが、網羅されていない</button>
+        <button class="diag-option" data-score="0">主要業務のマニュアルがあり、定期的に更新されている</button>
+      </div>
+    </div>
+
+    <div class="diag-question" data-q="5">
+      <p class="diag-question-num">Q6. 社長不在時</p>
+      <h3>社長が1週間不在にした場合、業務はどうなりますか？</h3>
+      <div class="diag-options">
+        <button class="diag-option" data-score="3">ほぼ全ての業務が止まる</button>
+        <button class="diag-option" data-score="2">日常業務は回るが、判断が必要な案件が溜まる</button>
+        <button class="diag-option" data-score="1">大半は回るが、一部で社長確認が必要</button>
+        <button class="diag-option" data-score="0">問題なく回る。緊急時の連絡体制もある</button>
+      </div>
+    </div>
+
+    <div class="diag-question" data-q="6">
+      <p class="diag-question-num">Q7. 経営数字</p>
+      <h3>月次の売上・利益・資金繰りの把握は、誰がしていますか？</h3>
+      <div class="diag-options">
+        <button class="diag-option" data-score="3">社長の頭の中だけにある</button>
+        <button class="diag-option" data-score="2">社長が手計算やExcelで把握している</button>
+        <button class="diag-option" data-score="1">税理士から月次報告はあるが、タイムラグがある</button>
+        <button class="diag-option" data-score="0">リアルタイムで経営ダッシュボードが見れる</button>
+      </div>
+    </div>
+
+    <div class="diag-question" data-q="7">
+      <p class="diag-question-num">Q8. 採用・育成</p>
+      <h3>社員の採用や教育は、どのように行われていますか？</h3>
+      <div class="diag-options">
+        <button class="diag-option" data-score="3">社長が全て対応。育成は「見て覚えろ」方式</button>
+        <button class="diag-option" data-score="2">社長主導で面接・教育するが、基準が曖昧</button>
+        <button class="diag-option" data-score="1">採用基準はあるが、教育は現場任せ</button>
+        <button class="diag-option" data-score="0">採用基準・教育プログラムが整備されている</button>
+      </div>
+    </div>
+
+    <div class="diag-question" data-q="8">
+      <p class="diag-question-num">Q9. IT・デジタル化</p>
+      <h3>業務のデジタル化（クラウド、自動化等）の状況は？</h3>
+      <div class="diag-options">
+        <button class="diag-option" data-score="3">紙と電話とFAXが中心</button>
+        <button class="diag-option" data-score="2">メールは使うが、業務は手作業が多い</button>
+        <button class="diag-option" data-score="1">一部クラウドサービスを導入しているが、活用しきれていない</button>
+        <button class="diag-option" data-score="0">主要業務がクラウド化・自動化されている</button>
+      </div>
+    </div>
+
+    <div class="diag-question" data-q="9">
+      <p class="diag-question-num">Q10. 事業承継の準備</p>
+      <h3>事業の引き継ぎについて、何か準備をしていますか？</h3>
+      <div class="diag-options">
+        <button class="diag-option" data-score="3">何もしていない。考えたくない</button>
+        <button class="diag-option" data-score="2">漠然と考えているが、具体的な行動はしていない</button>
+        <button class="diag-option" data-score="1">相談はしたことがあるが、具体的な計画はない</button>
+        <button class="diag-option" data-score="0">後継者候補がいて、計画的に引き継ぎを進めている</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Navigation -->
+  <div class="diag-nav" id="diagNav">
+    <button class="btn btn-secondary" id="prevBtn" style="visibility:hidden">戻る</button>
+    <button class="btn btn-primary" id="nextBtn" disabled>次へ</button>
+  </div>
+
+  <!-- Result -->
+  <div class="diag-result" id="diagResult">
+    <div class="diag-result-card">
+      <p style="color:var(--muted);font-size:.9rem;margin-bottom:.5rem">あなたの会社の社長依存度スコア</p>
+      <p class="diag-score" id="scoreValue">--</p>
+      <p class="diag-score-label">/ 30点</p>
+      <div class="diag-gauge"><div class="diag-gauge-fill" id="gaugeFill"></div></div>
+      <p class="diag-level" id="levelText"></p>
+      <div class="diag-advice" id="adviceText"></div>
+    </div>
+
+    <!-- Lead capture -->
+    <div class="diag-lead">
+      <h3>詳細レポートを無料でお届けします</h3>
+      <p>診断結果に基づいた具体的な改善ステップと<br>業種別の自動化事例をメールでお送りします。</p>
+      <div class="diag-lead-form" id="leadForm">
+        <input type="text" id="leadCompany" placeholder="会社名（任意）">
+        <input type="text" id="leadName" placeholder="お名前" required>
+        <input type="email" id="leadEmail" placeholder="メールアドレス" required>
+        <button class="btn btn-primary" id="leadSubmit">無料レポートを受け取る</button>
+      </div>
+      <p class="diag-lead-success" id="leadSuccess">お申し込みありがとうございます。24時間以内にお届けします。</p>
+      <p class="diag-lead-error" id="leadError"></p>
+    </div>
+
+    <div class="diag-next-actions">
+      <p>すぐに相談したい方はこちら</p>
+      <a href="/contact/" class="btn btn-primary" style="background:var(--amber);color:var(--navy);border-radius:8px;font-weight:700;font-size:.9rem;padding:10px 24px">メールで相談する</a>
+      <a href="https://ejpe1b5l3u3p.jp.larksuite.com/scheduler/38e3e8f22f32be52" target="_blank" rel="noopener" class="btn btn-primary" style="background:var(--amber);color:var(--navy);border-radius:8px;font-weight:700;font-size:.9rem;padding:10px 24px">面談を予約する</a>
+    </div>
+
+    <div class="diag-retry">
+      <a id="retryBtn">もう一度診断する</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>TOMOSHI｜事業の灯を、消さない。</p>
+  <p style="margin:.5rem 0"><a href="/about/" style="color:#999;text-decoration:none">TOMOSHIとは</a>｜<a href="/blog/" style="color:#999;text-decoration:none">ブログ</a>｜<a href="https://www.facebook.com/profile.php?id=61582172220115" target="_blank" rel="noopener" style="color:#999;text-decoration:none">Facebook</a>｜<a href="/privacy/" style="color:#999;text-decoration:none">プライバシーポリシー</a></p>
+  <p>&copy; 2026 東海エアサービス株式会社</p>
+</footer>
+
+<script>
+(function(){
+  var WORKER_URL = "https://tas-lark-bot.yosuke-toyoda.workers.dev/tomoshi-contact";
+  var answers = new Array(10).fill(null);
+  var current = 0;
+  var questions = document.querySelectorAll(".diag-question");
+  var progressFill = document.getElementById("progressFill");
+  var progressText = document.getElementById("progressText");
+  var prevBtn = document.getElementById("prevBtn");
+  var nextBtn = document.getElementById("nextBtn");
+  var diagNav = document.getElementById("diagNav");
+  var diagResult = document.getElementById("diagResult");
+  var questionsContainer = document.getElementById("questionsContainer");
+  var diagProgress = document.querySelector(".diag-progress");
+
+  // Option click
+  document.querySelectorAll(".diag-option").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var q = parseInt(this.closest(".diag-question").dataset.q);
+      var siblings = this.parentNode.querySelectorAll(".diag-option");
+      siblings.forEach(function(s){ s.classList.remove("selected"); });
+      this.classList.add("selected");
+      answers[q] = parseInt(this.dataset.score);
+      nextBtn.disabled = false;
+    });
+  });
+
+  function showQuestion(idx){
+    questions.forEach(function(q){ q.classList.remove("active"); });
+    questions[idx].classList.add("active");
+    progressFill.style.width = ((idx + 1) * 10) + "%";
+    progressText.textContent = (idx + 1) + " / 10";
+    prevBtn.style.visibility = idx === 0 ? "hidden" : "visible";
+    nextBtn.textContent = idx === 9 ? "結果を見る" : "次へ";
+    nextBtn.disabled = answers[idx] === null;
+    current = idx;
+  }
+
+  nextBtn.addEventListener("click", function(){
+    if(answers[current] === null) return;
+    if(current < 9){
+      showQuestion(current + 1);
+    } else {
+      showResult();
+    }
+  });
+
+  prevBtn.addEventListener("click", function(){
+    if(current > 0) showQuestion(current - 1);
+  });
+
+  function showResult(){
+    var total = answers.reduce(function(a,b){ return a + b; }, 0);
+    questionsContainer.style.display = "none";
+    diagNav.style.display = "none";
+    diagProgress.style.display = "none";
+    diagResult.style.display = "block";
+
+    document.getElementById("scoreValue").textContent = total;
+
+    var gauge = document.getElementById("gaugeFill");
+    var pct = Math.round((total / 30) * 100);
+    var levelEl = document.getElementById("levelText");
+    var adviceEl = document.getElementById("adviceText");
+
+    setTimeout(function(){ gauge.style.width = pct + "%"; }, 100);
+
+    if(total >= 21){
+      gauge.style.background = "var(--red)";
+      levelEl.textContent = "社長依存度：危険";
+      levelEl.style.color = "var(--red)";
+      adviceEl.innerHTML = '<p style="margin-bottom:1rem">社長がいなくなると事業が止まるリスクが非常に高い状態です。<strong>今すぐ対策を始める</strong>必要があります。</p><p style="font-weight:700;margin-bottom:.5rem">優先すべきこと：</p><ul><li>顧客情報をデータベース化し、社長の頭の中から出す</li><li>見積・請求の基準を文書化する</li><li>社長不在でも回る「最低限の仕組み」を1つ作る</li><li>事業承継の専門家に相談する</li></ul>';
+    } else if(total >= 11){
+      gauge.style.background = "var(--amber)";
+      levelEl.textContent = "社長依存度：要注意";
+      levelEl.style.color = "var(--amber)";
+      adviceEl.innerHTML = '<p style="margin-bottom:1rem">部分的に仕組み化されていますが、まだ社長に依存している領域が多い状態です。<strong>計画的に属人化を解消</strong>していきましょう。</p><p style="font-weight:700;margin-bottom:.5rem">優先すべきこと：</p><ul><li>「社長しかできない業務」をリストアップし、優先順位をつける</li><li>高頻度の業務から順に、手順書を作成する</li><li>デジタルツールで情報の一元管理を始める</li><li>3年後の引き継ぎを見据えた計画を立てる</li></ul>';
+    } else {
+      gauge.style.background = "#27ae60";
+      levelEl.textContent = "社長依存度：良好";
+      levelEl.style.color = "#27ae60";
+      adviceEl.innerHTML = '<p style="margin-bottom:1rem">仕組み化が進んでおり、事業承継の準備度が高い状態です。さらに<strong>事業価値を高める</strong>フェーズに進めます。</p><p style="font-weight:700;margin-bottom:.5rem">次のステップ：</p><ul><li>業務の自動化で、さらに効率を上げる</li><li>経営ダッシュボードで数字をリアルタイム可視化する</li><li>事業価値の評価（バリュエーション）を受ける</li><li>後継者・買い手候補との具体的な交渉を始める</li></ul>';
+    }
+
+    // GA4 event
+    if(typeof gtag === "function"){
+      gtag("event", "diagnosis_complete", {event_category: "diagnosis", event_label: "score_" + total, value: total});
+    }
+
+    window.scrollTo({top: diagResult.offsetTop - 20, behavior: "smooth"});
+  }
+
+  // Lead form
+  var leadSubmit = document.getElementById("leadSubmit");
+  leadSubmit.addEventListener("click", function(){
+    var name = document.getElementById("leadName").value.trim();
+    var email = document.getElementById("leadEmail").value.trim();
+    var company = document.getElementById("leadCompany").value.trim();
+    var leadError = document.getElementById("leadError");
+    var leadSuccess = document.getElementById("leadSuccess");
+    var leadForm = document.getElementById("leadForm");
+
+    leadError.style.display = "none";
+
+    if(!name || !email){
+      leadError.textContent = "お名前とメールアドレスは必須です。";
+      leadError.style.display = "block";
+      return;
+    }
+
+    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailRe.test(email)){
+      leadError.textContent = "メールアドレスの形式が正しくありません。";
+      leadError.style.display = "block";
+      return;
+    }
+
+    leadSubmit.disabled = true;
+    leadSubmit.textContent = "送信中...";
+
+    var total = answers.reduce(function(a,b){ return a + b; }, 0);
+    var data = {
+      company: company,
+      name: name,
+      email: email,
+      phone: "",
+      message: "【属人化リスク診断】スコア: " + total + "/30点\n回答: " + answers.join(","),
+      source: "セルフ診断"
+    };
+
+    fetch(WORKER_URL, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    })
+    .then(function(res){
+      if(!res.ok) throw new Error("送信失敗");
+      return res.json();
+    })
+    .then(function(){
+      leadForm.style.display = "none";
+      leadSuccess.style.display = "block";
+      if(typeof gtag === "function"){
+        gtag("event", "lead_capture", {event_category: "diagnosis", event_label: "diagnosis_lead", value: total});
+      }
+    })
+    .catch(function(){
+      leadError.textContent = "送信に失敗しました。お手数ですが info@tomoshi.jp にご連絡ください。";
+      leadError.style.display = "block";
+      leadSubmit.disabled = false;
+      leadSubmit.textContent = "無料レポートを受け取る";
+    });
+  });
+
+  // Retry
+  document.getElementById("retryBtn").addEventListener("click", function(){
+    answers.fill(null);
+    current = 0;
+    document.querySelectorAll(".diag-option").forEach(function(o){ o.classList.remove("selected"); });
+    diagResult.style.display = "none";
+    questionsContainer.style.display = "block";
+    diagNav.style.display = "flex";
+    diagProgress.style.display = "block";
+    showQuestion(0);
+    window.scrollTo({top: 0, behavior: "smooth"});
+  });
+})();
+</script>
+
+</body>
+</html>
