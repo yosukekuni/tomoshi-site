@@ -69,8 +69,16 @@ a{color:inherit}
 footer{text-align:center;padding:2rem;color:#999;font-size:.8rem;border-top:1px solid #eee}
 footer p{margin:.3rem 0}
 
+/* MOBILE NAV */
+.mobile-toggle{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:4px 8px;line-height:1}
+
 /* RESPONSIVE */
 @media(max-width:640px){
   .article h1{font-size:1.4rem}
   .site-header .logo{font-size:1rem}
+  .mobile-toggle{display:block}
+  .site-header nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem 24px;gap:0;border-top:1px solid rgba(255,255,255,.1);z-index:100}
+  .site-header nav.open{display:flex}
+  .site-header nav a{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .site-header .container{position:relative}
 }

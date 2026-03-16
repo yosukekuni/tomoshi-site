@@ -15,6 +15,15 @@
 <meta property="og:url" content="https://tomoshi.jp/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://tomoshi.jp/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TOMOSHI｜事業の灯を、消さない。">
+<meta name="twitter:description" content="買収企業の属人性を1-3ヶ月で仕組み化。社長依存度100%→10-20%、バリュエーション3-5倍。M&A仲介・事業承継支援のパートナー様へ。">
+<meta name="twitter:image" content="https://tomoshi.jp/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
@@ -139,9 +148,19 @@ a{color:inherit}
 footer{text-align:center;padding:2rem;color:#999;font-size:.8rem}
 footer p{margin:.3rem 0}
 
-/* FIXED CTA BAR */
-.fixed-cta{position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:12px 16px;display:flex;justify-content:center;gap:12px;z-index:100;box-shadow:0 -2px 12px rgba(0,0,0,.2)}
+/* FIXED CTA BAR (mobile only) */
+.fixed-cta{position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:12px 16px;display:none;justify-content:center;gap:12px;z-index:100;box-shadow:0 -2px 12px rgba(0,0,0,.2)}
 .fixed-cta .btn{padding:12px 24px;font-size:.9rem}
+
+/* MOBILE NAV */
+.mobile-toggle{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:4px 8px;line-height:1}
+@media(max-width:640px){
+  .mobile-toggle{display:block}
+  header nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem 24px;gap:0;border-top:1px solid rgba(255,255,255,.1)}
+  header nav.open{display:flex}
+  header nav a{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  header>div,header .container,.site-header .container{position:relative}
+}
 
 /* RESPONSIVE */
 @media(max-width:640px){
@@ -155,6 +174,7 @@ footer p{margin:.3rem 0}
   .contact{padding:3rem 1.5rem}
   .cta-grid{grid-template-columns:1fr}
   .partner-grid{grid-template-columns:1fr}
+  .fixed-cta{display:flex}
   body{padding-bottom:70px}
 }
 </style>
@@ -310,6 +330,7 @@ footer p{margin:.3rem 0}
 <header style="background:#1a2a3a;padding:16px 0">
 <div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
 <a href="/" style="color:#e8a838;font-size:1.2rem;font-weight:700;text-decoration:none;letter-spacing:2px">TOMOSHI</a>
+<button class="mobile-toggle" aria-label="メニュー" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
 <nav style="display:flex;gap:1.5rem"><a href="/about/" style="color:#ccc;text-decoration:none;font-size:.9rem">TOMOSHIとは</a><a href="#partner" style="color:#ccc;text-decoration:none;font-size:.9rem">パートナー様へ</a><a href="/diagnosis/" style="color:#ccc;text-decoration:none;font-size:.9rem">無料診断</a><a href="/blog/" style="color:#ccc;text-decoration:none;font-size:.9rem">ブログ</a><a href="#contact" style="color:#ccc;text-decoration:none;font-size:.9rem">お問い合わせ</a></nav>
 </div>
 </header>
