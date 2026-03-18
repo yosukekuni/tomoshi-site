@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tomoshi.jp/</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://tomoshi.jp/blog/</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <priority>0.8</priority>
   </url>
   <!-- Industry Pages -->
@@ -95,6 +95,56 @@
   <url>
     <loc>https://tomoshi.jp/blog/succession-consultation/</loc>
     <lastmod>2026-03-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/blog/succession-preparation/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/blog/sellability-checklist/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/blog/ai-efficiency-cases/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/blog/ai-roi-calculation/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/blog/value-up-from-personalization/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/blog/high-closure-rate-industries/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/blog/business-continuity-plan/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/blog/succession-failure-patterns/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/blog/sellable-vs-unsellable-company/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/blog/valuation-up-steps/</loc>
+    <lastmod>2026-03-19</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
