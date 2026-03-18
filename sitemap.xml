@@ -2,57 +2,99 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tomoshi.jp/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tomoshi.jp/about/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tomoshi.jp/diagnosis/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tomoshi.jp/contact/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tomoshi.jp/blog/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <!-- Industry Pages -->
+  <url>
+    <loc>https://tomoshi.jp/industry/</loc>
+    <lastmod>2026-03-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tomoshi.jp/industry/manufacturing/</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/industry/construction/</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/industry/accounting/</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/industry/used-cars/</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/industry/funeral/</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/industry/pharmacy/</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tomoshi.jp/industry/agriculture/</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <!-- Blog Posts -->
+  <url>
     <loc>https://tomoshi.jp/blog/successor-crisis/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tomoshi.jp/blog/black-profit-closure/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tomoshi.jp/blog/personalization-risk/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tomoshi.jp/blog/ma-preparation/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tomoshi.jp/blog/business-visualization/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tomoshi.jp/blog/succession-consultation/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
